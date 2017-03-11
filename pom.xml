@@ -45,8 +45,8 @@
 			<plugin>
         
   <groupId>org.apache.maven.plugins</groupId>
-  <artifactId>maven-war-plugin</artifactId>
-				<version>${maven-compiler-plugin.version}</version>
+  <artifactId>maven-compile-plugin</artifactId>
+		<version>${maven-compiler-plugin.version}</version>		
 	 
   <configuration>
     <webXml>java\com\webapp\WEB-INF\web.xml</webXml>        
