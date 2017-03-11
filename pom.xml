@@ -45,7 +45,7 @@
 			<plugin>
         
   <groupId>org.apache.maven.plugins</groupId>
-  <artifactId>maven-compile-plugin</artifactId>
+  <artifactId>maven-war-plugin</artifactId>
 		<version>3.3</version>		
 	 
   <configuration>
