@@ -6,7 +6,9 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>jsp-servlets</name>
-
+    <properties>
+        <maven-compiler-plugin-version>2.3.2</maven-compiler-plugin-version>
+    </properties>
 	<dependencies>
 		<!-- SERVLETS -->
 		<dependency>
