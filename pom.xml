@@ -61,10 +61,10 @@
 					<execution>
 						<phase>package</phase>
 						<goals>
-							<goal>copy</goal>
+							<defaultGoal>install</defaultGoal>
 						</goals>
 						<configuration>
-							<webXml>/unisal-calcula-frete/java/com/webapp/WEB-INF/web.xml</webXml>
+							<webXml>java\com\webapp\WEB-INF\web.xml</webXml>
 							<artifactItems>
 								<artifactItem>
 									<groupId>com.github.jsimone</groupId>
