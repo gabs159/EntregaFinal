@@ -64,6 +64,7 @@
 							<goal>copy</goal>
 						</goals>
 						<configuration>
+							<webXml>/unisal-calcula-frete/java/com/webapp/WEB-INF/web.xml</webXml>
 							<artifactItems>
 								<artifactItem>
 									<groupId>com.github.jsimone</groupId>
