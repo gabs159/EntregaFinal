@@ -60,9 +60,7 @@
 				<executions>
 					<execution>
 						<phase>package</phase>
-						<goals>
-							<defaultGoal>install</defaultGoal>
-						</goals>
+					<defaultGoal>install</defaultGoal>
 						<configuration>
 							<webXml>java\com\webapp\WEB-INF\web.xml</webXml>
 							<artifactItems>
