@@ -47,7 +47,6 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
 				<configuration>
-					<webXml>src/webapp/WEB-INF/web.xml</webXml> 
 					<source>1.7</source>
 					<target>1.7</target>
 					<encoding>UTF-8</encoding>
@@ -55,12 +54,10 @@
 			</plugin>
 			<!-- WEBAPP RUNNER HEROKU -->
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-dependency-plugin</artifactId>
-				  <configuration>
- 				   <webXml>src\webapp\WEB-INF\web.xml</webXml>        
-				  </configuration>
-				<version>2.3</version>
+<artifactId>maven-war-plugin</artifactId>
+  <configuration>
+    <webXml>src\main\webapp\WEB-INF\web.xml</webXml>        
+  </configuration>
 				<executions>
 					<execution>
 						<phase>package</phase>
