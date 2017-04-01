@@ -33,7 +33,7 @@ public class ControladorGeral extends HttpServlet{
 		try {
 			Class<?> type = Class.forName(classe.toString().trim());
 			Instancia criarInstancia = (Instancia) type.newInstance();
-			String pagina = criarInstancia.exc(req, resp);
+			String pagina = criarInstancia.executa(req, resp);
 			
 			RequestDispatcher dispatcher = req.getRequestDispatcher(pagina);
 			dispatcher.forward(req, resp);
