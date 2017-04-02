@@ -4,11 +4,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.dev.web.mobile.interfaces.Instancia;
+
+import com.dev.web.mobile.util.ActExec;
 import com.dev.web.mobile.util.Constantes;
 import com.dev.web.mobile.util.Utilities;
 
-public class Logout implements Instancia {
+public class Logout implements ActExec {
 	
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
@@ -19,10 +20,9 @@ public class Logout implements Instancia {
 	}
 
 	@Override
-	public String executa(HttpServletRequest request, HttpServletResponse response) {
+	public String exc(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 
 }
