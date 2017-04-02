@@ -61,7 +61,7 @@
 						<ul class="footermenu">
 							<li><a href="controlador-geral?execute=Voltar">Home</a></li>
 							<li><a href="controlador-geral?execute=ChamaCalculaFrete">Calculo do Frete</a></li>
-							<li><a href="controlador-geral?execute=CallCadCity">Cadastro de Cidades</a></li>
+							<li><a href="controlador-geral?execute=ChamaCadastraCidade">Cadastro de Cidades</a></li>
 							<li><a href="controlador-geral?execute=Logout">Logout</a></li>
 						</ul>
 					</div>
