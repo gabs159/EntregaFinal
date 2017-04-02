@@ -14,7 +14,7 @@ import com.dev.web.mobile.util.ActExec;
 import com.dev.web.mobile.util.Constantes;
 import com.dev.web.mobile.util.Utilities;
 
-public class CadastroCidade implements ActExec {
+public class CadastraCidade implements ActExec {
 	
 	private static final CityDAO DAO = CityDAO.getInstance();
 
