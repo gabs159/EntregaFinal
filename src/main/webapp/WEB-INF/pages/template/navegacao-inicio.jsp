@@ -16,7 +16,7 @@
 							<li><a href="controlador-geral?execute=ChamaCalculaFrete">Calculo do Frete</a></li>
 							<li class="divider-vertical"></li>
 							
-							<li><a href="controlador-geral?execute=ChamaCadastraCidade">Cadastro de Cidades</a></li>
+							<li><a href="controlador-geral?execute=CallCadCity">Cadastro de Cidades</a></li>
 							<li class="divider-vertical"></li>
 							
 							<li><a href="controlador-geral?execute=Logout">Logout</a></li>

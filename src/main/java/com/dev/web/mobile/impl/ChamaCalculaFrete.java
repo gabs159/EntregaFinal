@@ -11,7 +11,7 @@ import com.dev.web.mobile.util.ActExec;
 import com.dev.web.mobile.util.Constantes;
 import com.dev.web.mobile.util.Utilities;
 
-public class CallFreteCalc implements ActExec{	
+public class ChamaCalculaFrete implements ActExec{	
 	
 	private static final CityDAO DAO = CityDAO.getInstance();
 
