@@ -34,7 +34,9 @@ public final class DbUtil {
 			if(conn != null) {
 				conn.close();
 			}
-		} catch(Exception e) {}
+		} catch(Exception e) {
+			e.printStackTrace();			
+		}
 	}
 	
 	public void closeQuietly(Connection conn) {

@@ -7,10 +7,12 @@ import com.dev.web.mobile.interfaces.ActionExecuter;
 import com.dev.web.mobile.util.FretaoConstantes;
 import com.dev.web.mobile.util.JSPUtil;
 
-public class Login implements ActionExecuter {	
-
-	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		return JSPUtil.buildJSPPagesPath(FretaoConstantes.INICIO_JSP);
-	}	
+public class ChamaCadastraCidade implements ActionExecuter{
+	
+	@Override
+	public String execute(HttpServletRequest request, HttpServletResponse response) {	
+		
+		return JSPUtil.buildJSPPagesPath(FretaoConstantes.CADASTRA_CIDADE_JSP);
+	}
 
 }

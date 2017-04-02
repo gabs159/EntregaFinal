@@ -4,17 +4,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.dev.web.mobile.interfaces.Instancia;
-import com.dev.web.mobile.util.Constantes;
+import com.dev.web.mobile.interfaces.ActionExecuter;
+import com.dev.web.mobile.util.FretaoConstantes;
+import com.dev.web.mobile.util.JSPUtil;
 
-public class Logout implements Instancia {
-
-	public String executa(HttpServletRequest request, HttpServletResponse response) {
+public class Logout implements ActionExecuter {
+	
+	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
 		session.removeAttribute("usuario.hashcode");
 		session.invalidate();
 		
-		return Constantes.ROOT + "index.jsp";
+		return JSPUtil.buildJSPRootPath(FretaoConstantes.INDEX_JSP);
 	}
 
 }

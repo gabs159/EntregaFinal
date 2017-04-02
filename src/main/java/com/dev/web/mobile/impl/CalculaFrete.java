@@ -10,20 +10,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.dev.web.mobile.dao.CityDAO;
-import com.dev.web.mobile.util.ActExec;
-import com.dev.web.mobile.util.DistanceCalculator;
+import com.dev.web.mobile.interfaces.ActionExecuter;
+import com.dev.web.mobile.interfaces.DistanceCalculator;
 import com.dev.web.mobile.model.City;
 import com.dev.web.mobile.model.Frete;
-import com.dev.web.mobile.util.Constantes;
-import com.dev.web.mobile.util.Utilities;
+import com.dev.web.mobile.util.FretaoConstantes;
+import com.dev.web.mobile.util.JSPUtil;
 
-public class CalculaFrete implements ActExec {
+public class CalculaFrete implements ActionExecuter {
 	
 	private static final CityDAO cityDAO = CityDAO.getInstance();
 	private DistanceCalculator distanceCalculator = new CityDistanceCalculator();	
 
 	@Override
-	public String exc(HttpServletRequest request, HttpServletResponse response) {
+	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		String codigoA = request.getParameter("geocodigoA");
 		String codigoB = request.getParameter("geocodigoB");
 
@@ -50,7 +50,7 @@ public class CalculaFrete implements ActExec {
 			e.printStackTrace();
 		}
 		
-		return Utilities.buildJSPPagesPath(Constantes.CALCULA_FRETE_JSP);
+		return JSPUtil.buildJSPPagesPath(FretaoConstantes.CALCULA_FRETE_JSP);
 	}
 
 	private void setFreteInResponse(HttpServletRequest request, Frete frete) {
@@ -72,7 +72,7 @@ public class CalculaFrete implements ActExec {
 		frete.setPontoB(cityB.getNome());
 		frete.setDistancia(distCalc);
 
-		frete.getValorFrete();
+		frete.calculaValorFrete();
 		return frete;
 	}
 

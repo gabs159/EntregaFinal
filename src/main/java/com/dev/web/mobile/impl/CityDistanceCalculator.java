@@ -1,6 +1,6 @@
 package com.dev.web.mobile.impl;
 
-import com.dev.web.mobile.util.DistanceCalculator;
+import com.dev.web.mobile.interfaces.DistanceCalculator;
 import com.dev.web.mobile.model.City;
 
 /**

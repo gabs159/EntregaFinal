@@ -21,12 +21,12 @@ import com.dev.web.mobile.util.DbUtil;
 public abstract class GenericDAO {
 	private static Connection conn;
 	
-	protected List<Object[]> executaSqlSemParametro(Connection conn, String sql) throws SQLException {
+	protected List<Object[]> executeSqlWithoutParameter(Connection conn, String sql) throws SQLException {
 		Map<String, Object> params = new HashMap<String, Object>();
-		return executaSql(conn, sql, params, null);
+		return executeSql(conn, sql, params, null);
 	}
 	
-	private List<Object[]> executaSql(Connection conn, String sql, Map<String, Object> map, Integer maxRows) throws SQLException {
+	private List<Object[]> executeSql(Connection conn, String sql, Map<String, Object> map, Integer maxRows) throws SQLException {
 		List<Object[]> objects = new ArrayList<>();		
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -63,23 +63,9 @@ public abstract class GenericDAO {
 		return objects;
 	}
 	
-	public Connection getConnection() throws ClassNotFoundException, SQLException, IOException {		
+	public Connection getConnection() throws ClassNotFoundException, SQLException, IOException {
 		if(conn == null || conn.isClosed())
-			return conn = ConnectionFactory.getInstance().createConnection();
-		else
-			return conn;		
-	}
-	
-	public Connection getConnectionPool() throws ClassNotFoundException, SQLException, IOException {		
-		if(conn == null || conn.isClosed())
-			return conn = ConnectionPool.getInstance().createConnectionComPool();
-		else
-			return conn;		
-	}
-	
-	public Connection getConnectionPoolHeroku() throws ClassNotFoundException, SQLException, IOException {		
-		if(conn == null || conn.isClosed())
-			return conn = ConnectionPool.getInstance().createConnectionComPool();
+			return ConnectionFactory.getInstance().getConnectionManager().getConnection();
 		else
 			return conn;		
 	}

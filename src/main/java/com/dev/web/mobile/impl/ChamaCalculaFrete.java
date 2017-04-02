@@ -7,16 +7,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.dev.web.mobile.dao.CityDAO;
-import com.dev.web.mobile.util.ActExec;
-import com.dev.web.mobile.util.Constantes;
-import com.dev.web.mobile.util.Utilities;
+import com.dev.web.mobile.interfaces.ActionExecuter;
+import com.dev.web.mobile.util.FretaoConstantes;
+import com.dev.web.mobile.util.JSPUtil;
 
-public class ChamaCalculaFrete implements ActExec{	
+public class ChamaCalculaFrete implements ActionExecuter{	
 	
 	private static final CityDAO DAO = CityDAO.getInstance();
 
 	@Override
-	public String exc(HttpServletRequest request, HttpServletResponse response) {
+	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		 
 		 try {
 			request.setAttribute("citiesA", DAO.getCities());
@@ -25,7 +25,7 @@ public class ChamaCalculaFrete implements ActExec{
 			e.printStackTrace();
 		}
 		 
-		return Utilities.buildJSPPagesPath(Constantes.CALCULA_FRETE_JSP);
+		return JSPUtil.buildJSPPagesPath(FretaoConstantes.CALCULA_FRETE_JSP);
 		
 	}
 

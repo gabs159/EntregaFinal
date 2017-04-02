@@ -1,5 +1,6 @@
 package com.dev.web.mobile.util;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -9,7 +10,7 @@ import java.util.Properties;
  * @author JETHER ROIS
  *
  */
-public class PropertyUtil {
+public final class PropertyUtil {	
 	private static final PropertyUtil INSTANCE = new PropertyUtil();
 	
 	private PropertyUtil() {
@@ -33,5 +34,13 @@ public class PropertyUtil {
 		}
 		
 		
+	}
+
+	public Properties loadPropertieFile(String fileInClassPath) throws IOException, FileNotFoundException {
+		final Properties props = PropertyUtil.getInstance().readFromClasspath(fileInClassPath);
+		if(props == null) {
+			throw new FileNotFoundException(String.format("It was not possible to find the db-config file: '%s'.", fileInClassPath));
+		}
+		return props;
 	}
 }

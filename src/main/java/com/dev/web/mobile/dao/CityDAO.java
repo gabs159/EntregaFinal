@@ -30,7 +30,7 @@ public class CityDAO extends GenericDAO{
 		String sql = "SELECT id, nome, geocodigo, latitude, longitude FROM city";
 		List<City> cities = new ArrayList<>();
 		
-		List<Object[]> objects = executaSqlSemParametro(getConnection(), sql);
+		List<Object[]> objects = executeSqlWithoutParameter(getConnection(), sql);
 		if (objects != null) {
 			for (Object[] os : objects) {
 				cities.add(castObjectToCity(os));

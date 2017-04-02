@@ -1,7 +1,7 @@
 package com.dev.web.mobile.impl;
 
+import com.dev.web.mobile.interfaces.RegraDeCalculo;
 import com.dev.web.mobile.model.Frete;
-import com.dev.web.mobile.util.RegraDeCalculo;
 
 public class ValorFreteMaior300Km implements RegraDeCalculo{
 

@@ -14,7 +14,7 @@ public class Executor {
 		/*
 		City city = new City();
 		
-		city.setNome("ItajubÃ¡");
+		city.setNome("Itajubá");
 		city.setGeocodigo(0.0);
 		city.setLatitude(0.0);
 		city.setLongitude(0.0);
@@ -50,7 +50,7 @@ public class Executor {
 				
 		try {
 			city.setId(new Long("2"));
-			city.setNome("Cruzeiro"); // caso queria mudar o nome da cidade tambÃ©m
+			city.setNome("Cruzeiro"); // caso queria mudar o nome da cidade também
 			city.setGeocodigo(12722000);
 			city.setLatitude(-25.20654843);
 			city.setLongitude(-45.35484616);
