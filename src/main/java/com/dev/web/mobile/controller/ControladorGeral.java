@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.dev.web.mobile.dao.Executor;
-import com.dev.web.mobile.interfaces.Instancia;
 import com.dev.web.mobile.util.ActExec;
 import com.dev.web.mobile.util.Constantes;
 
@@ -21,7 +19,7 @@ public class ControladorGeral extends HttpServlet{
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	
+		
 		String instance = req.getParameter("execute");
 		if (instance == null) 
 			throw new IllegalArgumentException("The [execute] parameter cannot be null.");
@@ -32,8 +30,8 @@ public class ControladorGeral extends HttpServlet{
 		
 		try {
 			Class<?> type = Class.forName(classe.toString().trim());
-			Instancia criarInstancia = (Instancia) type.newInstance();
-			String pagina = criarInstancia.executa(req, resp);
+			ActExec criarInstancia = (ActExec) type.newInstance();
+			String pagina = criarInstancia.exc(req, resp);
 			
 			RequestDispatcher dispatcher = req.getRequestDispatcher(pagina);
 			dispatcher.forward(req, resp);
@@ -44,7 +42,7 @@ public class ControladorGeral extends HttpServlet{
 	}
 	
 
-
+	// Método criado para que possam atender requisições do tipo GET
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
@@ -69,5 +67,5 @@ public class ControladorGeral extends HttpServlet{
 		} 
 	}
 
-	
+
 }
