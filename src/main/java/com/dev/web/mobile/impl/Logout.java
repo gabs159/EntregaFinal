@@ -6,15 +6,23 @@ import javax.servlet.http.HttpSession;
 
 import com.dev.web.mobile.interfaces.Instancia;
 import com.dev.web.mobile.util.Constantes;
+import com.dev.web.mobile.util.Utilities;
 
 public class Logout implements Instancia {
-
-	public String executa(HttpServletRequest request, HttpServletResponse response) {
+	
+	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
 		session.removeAttribute("usuario.hashcode");
 		session.invalidate();
 		
-		return Constantes.ROOT + "index.jsp";
+		return Utilities.buildJSPRootPath(Constantes.INDEX_JSP);
 	}
+
+	@Override
+	public String executa(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }
